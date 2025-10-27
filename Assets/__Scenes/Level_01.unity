@@ -6772,6 +6772,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 494070403969761663, guid: 34fa225739932424ab9b9903a3e6c896, type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 415952563477295164, guid: 7001c0ea47b3254469177c518b43f57c, type: 3}
+    - target: {fileID: 494070403969761663, guid: 34fa225739932424ab9b9903a3e6c896, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 512
       objectReference: {fileID: 0}

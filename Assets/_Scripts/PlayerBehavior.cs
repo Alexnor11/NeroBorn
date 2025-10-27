@@ -11,6 +11,9 @@ public class PlayerBehavior : MonoBehaviour
     public float distanceToGround = 0.1f;
     public LayerMask groundLayer;
 
+    public GameObject bullet;
+    public float bulletSpeed = 100f;
+
 
     private float vInput;
     private float hInput;
@@ -44,6 +47,16 @@ public class PlayerBehavior : MonoBehaviour
 
         _rb.MovePosition(transform.position + transform.forward * vInput * Time.fixedDeltaTime);
         _rb.MoveRotation(_rb.rotation * angleRot);
+
+        if (Input.GetMouseButton(0))
+        {
+            GameObject newBullet = Instantiate(bullet,
+                transform.position + new Vector3(1, 0, 0),
+                transform.rotation) as GameObject;
+
+            Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
+            bulletRB.velocity = transform.forward * bulletSpeed;
+        }
     }
 
     private bool IsGrounded()
