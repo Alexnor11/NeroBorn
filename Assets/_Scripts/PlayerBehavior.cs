@@ -50,8 +50,8 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-            GameObject newBullet = Instantiate(bullet,
-                transform.position + new Vector3(1, 0, 0),
+            GameObject newBullet = Instantiate(
+                bullet, transform.position + new Vector3(1, 0, 0), 
                 transform.rotation) as GameObject;
 
             Rigidbody bulletRB = newBullet.GetComponent<Rigidbody>();
