@@ -19,11 +19,13 @@ public class PlayerBehavior : MonoBehaviour
     private float hInput;
     private Rigidbody _rb;
     private CapsuleCollider _col;
+    private GameBehaviour _gameManager;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _col = GetComponent<CapsuleCollider>();
+        _gameManager = GameObject.Find("GameManager").GetComponent<GameBehaviour>();
     }
 
     private void Update()
@@ -68,5 +70,12 @@ public class PlayerBehavior : MonoBehaviour
             groundLayer, QueryTriggerInteraction.Ignore);
         
         return grounded;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.name == " Enemy")
+        {
+            _gameManager.PlayerHP -= 1;
+        }
     }
 }
