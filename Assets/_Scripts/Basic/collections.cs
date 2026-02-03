@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -51,7 +51,7 @@ public class collections : MonoBehaviour
             Debug.LogFormat("{0} - Here!", partyMember);
         }
 
-        // Ñëîâàðè
+        // Ð¡Ð»Ð¾Ð²Ð°Ñ€Ð¸
 
         Dictionary<string, int> itemInventory = new Dictionary<string, int>()
         {
