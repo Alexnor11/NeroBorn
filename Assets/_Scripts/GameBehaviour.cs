@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -22,7 +22,7 @@ public class GameBehaviour : MonoBehaviour
             
             if (_itemsCollected >= maxItems)
             {
-                labelText = "You’ve found all the items!";
+                labelText = "Youâ€™ve found all the items!";
                 showWinScreen = true;
                 Time.timeScale = 0f;
             }
@@ -49,17 +49,17 @@ public class GameBehaviour : MonoBehaviour
             }
             else
             {
-                labelText = "Ouch... that’s got hurt.";
+                labelText = "Ouch... thatâ€™s got hurt.";
             }
             //Debug.LogFormat("Lives: {0}", _playerHP);
         }
     }
 
-    void RestartLevel()
-    {
-        SceneManager.LoadScene(0);
-        Time.timeScale = 1.0f;
-    }
+    //void RestartLevel()
+    //{
+    //    SceneManager.LoadScene(0);
+    //    Time.timeScale = 1.0f;
+    //}
 
     private void OnGUI()
     {
@@ -72,7 +72,7 @@ public class GameBehaviour : MonoBehaviour
             if(GUI.Button(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 50,
                 200, 100), "YOU WON!")) 
             {
-                RestartLevel();
+                Utilities.RestartLevel();
             }
         }
         if (showLossScreen) 
@@ -80,7 +80,7 @@ public class GameBehaviour : MonoBehaviour
             if(GUI.Button(new Rect(Screen.width / 2 -100, 
                 Screen.height /2 - 50, 200, 100),"You lose..."))
             {
-                RestartLevel();
+                Utilities.RestartLevel();
             }
         }
     }
