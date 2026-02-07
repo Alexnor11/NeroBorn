@@ -29,4 +29,10 @@ public static class Utilities
 		countReference += 1;
 		return "Next time you`ll be at number " + countReference;
 	}
+
+    //public static string UpdateDeathCount(out int countReference)
+    //{
+    //    countReference += 1;
+    //    return "Next time you`ll be at number " + countReference;
+    //}
 }
