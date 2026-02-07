@@ -11,6 +11,10 @@ public static class Utilities
 	{
 		SceneManager.LoadScene(0);
 		Time.timeScale = 1.0f;
+
+		Debug.Log("Player death: " + playerDeaths);
+		string message = UpdateDeathCount(ref playerDeaths);
+		Debug.Log("Player death: " + playerDeaths);
 	}
 
 	public static bool RestartLevel(int sceneIndex)
@@ -18,5 +22,11 @@ public static class Utilities
 		SceneManager.LoadScene(sceneIndex);
 		Time.timeScale = 1.0f;
 		return true;
+	}
+
+	public static string UpdateDeathCount(ref int countReference)
+	{
+		countReference += 1;
+		return "Next time you`ll be at number " + countReference;
 	}
 }
