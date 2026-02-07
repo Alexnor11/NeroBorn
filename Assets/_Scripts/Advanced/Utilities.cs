@@ -13,7 +13,7 @@ public static class Utilities
 		Time.timeScale = 1.0f;
 
 		Debug.Log("Player death: " + playerDeaths);
-		string message = UpdateDeathCount(ref playerDeaths);
+		string message = UpdateDeathCount(out playerDeaths);
 		Debug.Log("Player death: " + playerDeaths);
 	}
 
@@ -24,15 +24,15 @@ public static class Utilities
 		return true;
 	}
 
-	public static string UpdateDeathCount(ref int countReference)
+	//public static string UpdateDeathCount(ref int countReference)
+	//{
+	//	countReference += 1;
+	//	return "Next time you`ll be at number " + countReference;
+	//}
+
+	public static string UpdateDeathCount(out int countReference)
 	{
-		countReference += 1;
+		countReference = 1;
 		return "Next time you`ll be at number " + countReference;
 	}
-
-    //public static string UpdateDeathCount(out int countReference)
-    //{
-    //    countReference += 1;
-    //    return "Next time you`ll be at number " + countReference;
-    //}
 }
