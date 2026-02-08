@@ -25,13 +25,14 @@ public class GameBehaviour : MonoBehaviour , IManager
     private void Start()
     {
         Initialize();
+        
     }
 
     public void Initialize()
     {
         _state = "Manager initialized...";
         Debug.Log(_state);
-    }
+    }  
 
     public int Items
     {
