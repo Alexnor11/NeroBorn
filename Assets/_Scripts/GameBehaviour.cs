@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameBehaviour : MonoBehaviour
+public class GameBehaviour : MonoBehaviour , IManager
 {
     public string labelText = "Collect all 4 items and win yourfreedom!";
     public int maxItems = 4;
@@ -13,6 +13,25 @@ public class GameBehaviour : MonoBehaviour
 
     private int _itemsCollected = 0;
     private int _playerHP = 3;
+
+    private string _state;
+
+    public string State
+    {
+        get {  return _state; }
+        set { _state = value; }
+    }
+
+    private void Start()
+    {
+        Initialize();
+    }
+
+    public void Initialize()
+    {
+        _state = "Manager initialized...";
+        Debug.Log(_state);
+    }
 
     public int Items
     {
