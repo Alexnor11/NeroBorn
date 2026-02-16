@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -20,6 +20,8 @@ public class ItemBehavior : MonoBehaviour
             print("Item collected!");
 
             gameManager.Items += 1;
+
+            gameManager.PrintLootReport();
         }
     }
 }

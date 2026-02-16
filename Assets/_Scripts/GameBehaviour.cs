@@ -28,12 +28,23 @@ public class GameBehaviour : MonoBehaviour , IManager
         Initialize();        
     }
 
+    public Stack<string> lootStack = new Stack<string>();
+
     public void Initialize()
     {
         _state = "Manager initialized...";
         _state.FancyDebug();
-
         Debug.Log(_state);
+
+        lootStack.Push("Sword of Doom");
+        lootStack.Push("HP+");
+        lootStack.Push("Golden Key");
+        lootStack.Push("Winged Boot");
+        lootStack.Push("Mythril Bracers");
+    }
+    public void PrintLootReport()
+    {
+        Debug.LogFormat("There are {0} random loot items waiting for you!", lootStack.Count);
     }
 
 
