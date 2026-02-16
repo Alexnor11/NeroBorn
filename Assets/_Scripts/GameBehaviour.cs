@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CustomExtensions;
 
 public class GameBehaviour : MonoBehaviour , IManager
 {
@@ -24,15 +25,17 @@ public class GameBehaviour : MonoBehaviour , IManager
 
     private void Start()
     {
-        Initialize();
-        
+        Initialize();        
     }
 
     public void Initialize()
     {
         _state = "Manager initialized...";
+        _state.FancyDebug();
+
         Debug.Log(_state);
-    }  
+    }
+
 
     public int Items
     {
