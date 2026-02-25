@@ -25,7 +25,8 @@ public class GameBehaviour : MonoBehaviour , IManager
 
     private void Start()
     {
-        Initialize();        
+        Initialize();
+        InventoryList<string> inventoryList = new InventoryList<string>();
     }
 
     public Stack<string> lootStack = new Stack<string>();
