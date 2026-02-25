@@ -23,6 +23,10 @@ public class GameBehaviour : MonoBehaviour , IManager
         set { _state = value; }
     }
 
+    // Делегаты
+    public delegate void DebugDelegate(string newText);
+    public DebugDelegate debug = Print;
+
     private void Start()
     {
         Initialize();
@@ -37,7 +41,7 @@ public class GameBehaviour : MonoBehaviour , IManager
     {
         _state = "Manager initialized...";
         _state.FancyDebug();
-        Debug.Log(_state);
+        debug(_state);
 
         lootStack.Push("Sword of Doom");
         lootStack.Push("HP+");
@@ -45,6 +49,12 @@ public class GameBehaviour : MonoBehaviour , IManager
         lootStack.Push("Winged Boot");
         lootStack.Push("Mythril Bracers");
     }
+
+    public static void Print(string newText)
+    {
+        Debug.Log(newText);
+    }
+
     public void PrintLootReport()
     {
         var currentItem = lootStack.Pop();
