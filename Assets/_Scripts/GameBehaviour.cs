@@ -27,6 +27,8 @@ public class GameBehaviour : MonoBehaviour , IManager
     {
         Initialize();
         InventoryList<string> inventoryList = new InventoryList<string>();
+        inventoryList.SetItem("Potion");
+        Debug.Log(inventoryList.item);
     }
 
     public Stack<string> lootStack = new Stack<string>();
