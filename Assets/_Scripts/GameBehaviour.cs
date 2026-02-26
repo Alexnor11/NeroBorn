@@ -43,6 +43,8 @@ public class GameBehaviour : MonoBehaviour , IManager
         _state.FancyDebug();
         debug(_state);
 
+        LogWithDelegate(debug);
+
         lootStack.Push("Sword of Doom");
         lootStack.Push("HP+");
         lootStack.Push("Golden Key");
@@ -53,6 +55,11 @@ public class GameBehaviour : MonoBehaviour , IManager
     public static void Print(string newText)
     {
         Debug.Log(newText);
+    }
+
+    public void LogWithDelegate(DebugDelegate del)
+    {
+        del("Delegating the debug task...");
     }
 
     public void PrintLootReport()
