@@ -45,6 +45,11 @@ public class GameBehaviour : MonoBehaviour , IManager
 
         LogWithDelegate(debug);
 
+        GameObject player = GameObject.Find("Player");
+        PlayerBehavior playerBehavior = player.GetComponent<PlayerBehavior>();
+
+        playerBehavior.playerJump += HandlePlayerJump;        
+
         lootStack.Push("Sword of Doom");
         lootStack.Push("HP+");
         lootStack.Push("Golden Key");
@@ -60,6 +65,11 @@ public class GameBehaviour : MonoBehaviour , IManager
     public void LogWithDelegate(DebugDelegate del)
     {
         del("Delegating the debug task...");
+    }
+
+    public void HandlePlayerJump()
+    {
+        debug("Player has jumped...");
     }
 
     public void PrintLootReport()
