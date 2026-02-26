@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
@@ -21,6 +21,9 @@ public class PlayerBehavior : MonoBehaviour
     private CapsuleCollider _col;
     private GameBehaviour _gameManager;
 
+    public delegate void JumpingEvent();
+    public event JumpingEvent playerJump;
+
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
@@ -39,7 +42,9 @@ public class PlayerBehavior : MonoBehaviour
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space))
         {
             _rb.AddForce(Vector3.up * jumpVelocity, ForceMode.Impulse);
-        }
+
+            playerJump();
+        }        
     }    
     
     private void FixedUpdate()
