@@ -150,7 +150,20 @@ public class GameBehaviour : MonoBehaviour , IManager
             if(GUI.Button(new Rect(Screen.width / 2 -100, 
                 Screen.height /2 - 50, 200, 100),"You lose..."))
             {
-                Utilities.RestartLevel(-1);
+                try
+                {
+                    Utilities.RestartLevel(-1);
+                    debug("Level restarted successfully...");
+                }
+                catch(System.ArgumentException e)
+                {
+                    Utilities.RestartLevel(0);
+                    debug("Reverting to scene 0: " + e.ToString());
+                }
+                finally
+                {
+                    debug("Restart handked...");
+                }
             }
         }
     }
