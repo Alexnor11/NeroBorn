@@ -16,4 +16,9 @@ public class Character
     {
         this.name = name;       
     }
+
+    public void PrintStatsInfo()
+    {
+        Debug.LogFormat("Hero: {0} - {1}", name, exp);
+    }
 }
