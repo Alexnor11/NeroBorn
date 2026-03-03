@@ -4,5 +4,6 @@ using UnityEngine;
 
 public class Character
 {
-
+    public string name;
+    public int exp = 0;
 }
