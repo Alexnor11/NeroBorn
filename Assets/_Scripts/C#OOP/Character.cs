@@ -39,4 +39,10 @@ public struct Weapon
     {
         Debug.LogFormat("Weapon: {0} - {1} DBM", name , damage);
     }
+
+    private void Reset()
+    {
+        this.name = "Not assigned";
+        this.damage = 0;
+    }
 }
