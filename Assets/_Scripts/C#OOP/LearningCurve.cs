@@ -25,8 +25,7 @@ public class LearningCurve : MonoBehaviour
         huntingBow.PrintWeaponStats();
         warBow.PrintWeaponStats();
 
-        Paladin knight = new Paladin("Sir Arthure");
+        Paladin knight = new Paladin("Sir Arthure", huntingBow);
         knight.PrintStatsInfo();
-
     }
 }
